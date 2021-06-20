@@ -1,4 +1,4 @@
-.yaml
-.ini
-.ipynb
-.vscode
+app.yaml
+*.ini
+*.ipynb
+*.vscode

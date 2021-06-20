@@ -1,6 +1,10 @@
 ### Environment setup
 Ensure that the packages/dependencies listed in requirements.txt are installed on the compute machine where the scripts below would be executed. 
 
+### (Optional) Running flask locally
+Execute `python local_app.py`. 
+Output can be viewed in 127.0.0.1:5000/5001
+
 ### Setting up CloudSQL & App Engine
 1. These steps are for first time creation. Create a CloudSQL database by in GCP by choosing the type (ex: PostgreSQL, MySQL, MSSQL), compute, region, memory
 2. (Optional) Create a new user other than root.
@@ -11,7 +15,7 @@ Ensure that the packages/dependencies listed in requirements.txt are installed o
 
 ### Setup the DATABASE and TABLES
 1. These steps are for first time creation. Run setup_db.py to create database and tables with appropriate schema. setup_db.py requires an environment variable for configuration file that contains config information for the database in a format friendly to the config parser. 
-2. setup_db.py needs to be run either from your local computer or a GCP VM/compute engine whose IP address has been placed in the allowlist of the database. 
+2. setup_db.py needs to be run either from your local computer or a GCP VM/compute engine whose IP address has been placed in the allowlist of the database as `python setup_db.py`
 
 ### Define backend & app API endpoints
 1. db.py creates the backend functionality associated with the API
@@ -29,3 +33,6 @@ env_variables:
 
 ```
 4. Type `gcloud app deploy` to deploy the app, GCP will automatically deploy the app and provide a URL to view the app. The app can also be accessed by typing `gcloud app browse`
+
+### References
+1. https://github.com/GoogleCloudPlatform/python-docs-samples/tree/master/appengine/standard_python3/cloudsql
